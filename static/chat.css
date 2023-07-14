@@ -1,0 +1,76 @@
+body{
+  background-image: url('background.png');
+}
+
+#chatbot {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  height: 600px;
+  width: 70%;
+  border-radius: 10px;
+  border: 3px solid #002350;
+  padding: 10px;
+  overflow: auto;
+  background-color: #ffffff;
+}
+
+.botText{
+  white-space: pre-wrap;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  text-align: left;
+  line-height: 25px;
+  color: black;
+}
+
+#buttonInput {
+  font-size: 20px;
+  border: 3px solid #002350;
+  border-radius: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 62px;
+  width: 90px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #d0d0d0;
+  color: black;
+  cursor: pointer;
+}
+
+#userInput{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 70%;
+  text-align: center;
+}
+
+#textInput{
+  border: 3px solid #002350;
+  border-radius: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  width: 60%;
+  padding: 16px;
+  color: #002350;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 48px;
+}
+
+h1 img{
+  width: 100px;
+  height: 90px;
+}
+
+.userText{
+  text-align: right;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  color: black;
+}

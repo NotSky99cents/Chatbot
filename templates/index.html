@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CHATBOT</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'chat.css' %}">
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>
+            <img src="static/amdocs.png" alt="Logo" id="amdocsLogo" style="
+            margin: -28px 8px;
+            ">
+            <img src="static/optichat.png" alt="Logo" id="optimaLogo" style="
+            margin: -29px -50px;
+            ">
+            <strong style="margin: 17px;">ptiChat</strong>
+        </h1>
+        <div id="chatbot">
+            <p class="botText"><span style="color: red;">OptiChat: </span><span> Hey! I am OptiChat and I'm here to assist you with your Queries! Type your queries in the box given below!</span></p>
+        </div>
+
+        <div id="userInput">
+            <input type="text" id="textInput" name="userMessage" placeholder="Type something..."/>
+            <input type="submit" value="Send" id="buttonInput"/>
+        </div>
+        
+        <script>
+            function getUserResponse(){
+                var userText = $('#textInput').val();
+                var userHTML = "<pre class='userText'><span style='color: blue'>User: </span><span>"+userText+"</span></pre>";
+                $('#textInput').val("");
+                $('#chatbot').append(userHTML);
+
+                $.get('/get_output',{userMessage:userText}).done(function(data){
+                    var returnedMessage = "<pre class='botText'><span style='color: red'>OptiChat: </span><span>"+data+"</span></pre>";
+                    $('#chatbot').append(returnedMessage);
+                })
+
+            }
+
+            $('#buttonInput').click(function(){
+                getUserResponse();
+            })  
+
+        </script>
+    </body>
+</html>
